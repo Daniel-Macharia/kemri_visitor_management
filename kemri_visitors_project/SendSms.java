@@ -43,7 +43,7 @@ public class SendSms
 
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
-            connection.setRequestProperty("Authorization", "Bearer npY2qbtIXcD7H3uRCcwgVwJShof0x9yeAr3ma7RM4C8TjuvewaB29bLeODRm");
+            connection.setRequestProperty("Authorization", "Bearer myMobileSasaAPIKey");
             connection.setRequestProperty("Accept", "application/json");
             connection.setRequestProperty("Content-Type", "application/json");
 
