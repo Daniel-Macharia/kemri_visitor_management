@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kemri_visitors_project.HomeController">
+   <children>
+      <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab text="Visitor Registration" style="-fx-background-color: #ffffff" >
+            <content>
+              <VBox alignment="CENTER" style="-fx-background-color: #ffffff" VBox.vgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" spacing="8.0">
+                            <children>
+                                <Label text="Register New Visitor" textFill="#408ae4">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        
+                        <HBox alignment="CENTER" spacing="8.0">
+                            <children>
+                                <Label prefHeight="17.0" prefWidth="160.0" text="Visitor ID Number" textFill="#b51b72">
+                                    <HBox.margin>
+                                            <Insets top="10.0" bottom="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="visitor_ID_number" prefHeight="25.0" prefWidth="224.0" promptText="enter visitor ID number" >
+                                    <HBox.margin>
+                                        <Insets top="10.0" bottom="10.0" />
+                                    </HBox.margin>
+                                    <font>
+                                       <Font size="16.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        
+                        <HBox alignment="CENTER" spacing="8.0">
+                            <children>
+                                <Label prefHeight="17.0" prefWidth="160.0" text="Visitor Name" textFill="#b51b72">
+                                    <HBox.margin>
+                                            <Insets top="10.0" bottom="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="visitor_name" prefHeight="25.0" prefWidth="224.0" promptText="enter visitor name" >
+                                    <HBox.margin>
+                                        <Insets top="10.0" bottom="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                       <Font size="16.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        
+                        <HBox alignment="CENTER" spacing="8.0">
+                            <children>
+                                <Label prefHeight="17.0" prefWidth="160.0" text="Visitor Phone Number" textFill="#b51b72">
+                                    <HBox.margin>
+                                            <Insets top="10.0" bottom="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                 <TextField fx:id="visitor_phone_number" prefHeight="25.0" prefWidth="224.0" promptText="enter visitor phone number" >
+                                    <HBox.margin>
+                                        <Insets top="10.0" bottom="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                       <Font size="16.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        
+                        <HBox alignment="CENTER" spacing="240.0">
+                            <children>
+                                <Label mnemonicParsing="false" prefWidth="64">
+                                    <HBox.margin>
+                                        <Insets top="10.0" bottom="10.0" right="0.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                       <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Button mnemonicParsing="false" prefWidth="80" onAction="#registerVisitorAction" text="Register" textFill="#22bae5">
+                                    <HBox.margin>
+                                        <Insets top="10.0" bottom="10.0" right="0.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                       <Font size="16.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+            </content>
+          </Tab>
+          <Tab text="VisitorCheck In" style="-fx-background-color: #ffffff">
+            <content>
+                <VBox alignment="CENTER" style="-fx-background-color: #ffffff" VBox.vgrow="ALWAYS">
+                    <children>
+                    <HBox alignment="CENTER" spacing="8.0">
+                        <children>
+                            <Label text="Register New Visitor" textFill="#408ae4">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                            </Label>
+                        </children>
+                    </HBox>
+                  
+                    <HBox alignment="CENTER" spacing="8.0">
+                        <children>
+                            <Label prefHeight="17.0" prefWidth="168.0" text="ID no." textFill="#b51b72">
+                                <HBox.margin>
+                                    <Insets top="10.0" bottom="10.0"/>
+                                </HBox.margin>
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="visitor_id" prefHeight="25.0" prefWidth="224.0" promptText="Visitors ID number">
+                                <HBox.margin>
+                                    <Insets top="10.0" bottom="10.0"/>
+                                </HBox.margin>
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                    
+                    <HBox alignment="CENTER" spacing="8.0">
+                        <children>
+                            <Label prefHeight="17.0" prefWidth="168.0" text="Origin" textFill="#b51b72">
+                                <HBox.margin>
+                                    <Insets top="10.0" bottom="10.0"/>
+                                </HBox.margin>
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                             </Label>
+                            <TextField fx:id="visitor_origin"  prefHeight="25.0" prefWidth="224.0" promptText="Organization or county or country" >
+                                <HBox.margin>
+                                    <Insets top="10.0" bottom="10.0"/>
+                                </HBox.margin>
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                        
+                    <HBox alignment="CENTER" spacing="8.0">
+                        <children>
+                            <Label prefHeight="17.0" prefWidth="168.0" text="Destination" textFill="#b51b72">
+                                <HBox.margin>
+                                    <Insets top="10.0" bottom="10.0"/>
+                                </HBox.margin>
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                            </Label>
+                            <ComboBox fx:id="visitor_destination"  prefHeight="25.0" prefWidth="224.0" >
+                                <!-- HBox.margin>
+                                    <Insets top="10.0" bottom="10.0"/>
+                                </HBox.margin -->
+                            </ComboBox>
+                        </children>
+                    </HBox>
+                        
+                    <HBox alignment="CENTER" spacing="8.0">
+                        <children>
+                            <Label prefHeight="17.0" prefWidth="168.0" text="Reason" textFill="#b51b72">
+                                <HBox.margin>
+                                    <Insets top="10.0" bottom="10.0"/>
+                                </HBox.margin>
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="visit_reason" prefHeight="25.0" prefWidth="224.0" promptText="Reason for visit" >
+                                <HBox.margin>
+                                    <Insets top="10.0" bottom="10.0"/>
+                                </HBox.margin>
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                  
+                  
+                    <HBox alignment="CENTER" spacing="8.0">
+                        <children>
+                            <Label prefHeight="17.0" prefWidth="168.0" text="Visit by" textFill="#b51b72">
+                                <HBox.margin>
+                                    <Insets top="10.0" bottom="10.0"/>
+                                </HBox.margin>
+                                <font>
+                                    <Font  size="16.0" />
+                                </font>
+                            </Label>
+                            <VBox alignment="CENTER" spacing="8.0">
+                                <children>
+                                    <RadioButton fx:id="visit_on_foot" mnemonicParsing="false" prefHeight="25.0" prefWidth="224.0" onAction="#onFootAction" text="Foot" >
+                                        <HBox.margin>
+                                            <Insets top="10.0" bottom="10.0"/>
+                                        </HBox.margin>
+                                        <font>
+                                            <Font size="16.0" />
+                                        </font>
+                                    </RadioButton>
+                                    <RadioButton fx:id="visit_by_vehicle"  mnemonicParsing="false" prefHeight="25.0" prefWidth="224.0" onAction="#byVehicleAction" text="Vehicle" >
+                                        <HBox.margin>
+                                            <Insets top="10.0" bottom="10.0"/>
+                                        </HBox.margin>
+                                        <font>
+                                            <Font size="16.0" />
+                                        </font>
+                                    </RadioButton>
+                                </children>
+                            </VBox>
+                        </children>
+                    </HBox>
+                    
+                    <HBox alignment="CENTER" spacing="8.0">
+                        <children>
+                            <Label fx:id="number_plate_label" prefHeight="17.0" prefWidth="168.0" text="Vehicle's number plate" textFill="#b51b72" visible="false">
+                                <HBox.margin>
+                                    <Insets top="10.0" bottom="10.0"/>
+                                </HBox.margin>
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="number_plate_input" prefHeight="25.0" prefWidth="224.0" promptText="Enter the plate number" visible="false">
+                                <HBox.margin>
+                                    <Insets top="10.0" bottom="10.0"/>
+                                </HBox.margin>
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                            </TextField>
+                        </children>
+                    </HBox>
+                        
+                    <HBox alignment="CENTER" spacing="256.0">
+                        <children>
+                            <Label mnemonicParsing="false" prefWidth="64">
+                                <HBox.margin>
+                                    <Insets top="10.0" bottom="10.0" right="0.0"/>
+                                </HBox.margin>
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                            </Label>
+                            <Button mnemonicParsing="false" onAction="#checkInAction" text="Check In" prefWidth="88.0" textFill="#22bae5">
+                                <HBox.margin>
+                                    <Insets top="10.0" bottom="10.0"/>
+                                </HBox.margin>
+                                <font>
+                                    <Font size="16.0" />
+                                </font>
+                            </Button>
+                        </children>
+                    </HBox>
+                  
+               </children>
+        </VBox>
+      </content>
+    </Tab>
+            <Tab text="Visitor Check Out" style="-fx-background-color: #ffffff">
+              <content>
+                <VBox alignment="CENTER" style="-fx-background-color: #ffffff" VBox.vgrow="ALWAYS">
+                    <children>
+                         
+                        <HBox alignment="CENTER" spacing="8.0">
+                            <children>
+                                <Label text="Register New Visitor" textFill="#408ae4">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    
+                        <HBox alignment="CENTER" spacing="8.0">
+                            <children>
+                                <Label text="Visitor Number or ID" prefHeight="17.0" prefWidth="160.0" textFill="#b51b72">
+                                    <HBox.margin>
+                                        <Insets top="10.0" bottom="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="visitor_number_or_ID" prefHeight="25.0" prefWidth="224.0" promptText="enter visitor number or ID" >
+                                    <HBox.margin>
+                                        <Insets top="10.0" bottom="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </TextField>
+                            </children>
+                        </HBox>
+                    
+                        <HBox alignment="CENTER" spacing="222.0">
+                            <children>
+                                <Label mnemonicParsing="false" prefWidth="64">
+                                    <HBox.margin>
+                                        <Insets top="10.0" bottom="10.0" right="0.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                                <Button mnemonicParsing="false" prefWidth="96.0" onAction="#checkOutAction" text="Check Out" textFill="#22bae5">
+                                    <HBox.margin>
+                                        <Insets top="10.0" bottom="10.0"/>
+                                    </HBox.margin>
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+              </content>
+            </Tab>
+            
+            <Tab text="Visit Report" style="-fx-background-color: #ffffff" >
+              <content>
+                <VBox alignment="CENTER" style="-fx-background-color: #ffffff" VBox.vgrow="ALWAYS">
+                     <children>
+                         
+                        <HBox alignment="CENTER" spacing="32.0">
+                            <children>
+                                <HBox alignment="CENTER" spacing="32.0">
+                                    <children>
+                                        <Label text="Date: " textFill="#b51b72">
+                                            <HBox.margin>
+                                                <Insets top="10.0" bottom="10.0"/>
+                                            </HBox.margin>
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                         
+                                        <DatePicker fx:id="date_to_report" promptText="date to report" >
+                                            <HBox.margin>
+                                                <Insets top="10.0" bottom="10.0"/>
+                                            </HBox.margin>
+                                        </DatePicker>
+                                    </children>
+                                </HBox>
+                                
+                                <HBox alignment="CENTER" spacing="16">
+                                    <children>
+                                        <Label prefWidth="64.0">
+                                            <HBox.margin>
+                                                <Insets top="10.0" bottom="10.0"/>
+                                            </HBox.margin>
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Label>
+                                        <Button  mnemonicParsing="false" prefWidth="88.0" onAction="#generateVisitReportAction" text="Generate" textFill="#22bae5">
+                                            <HBox.margin>
+                                                <Insets top="10.0" bottom="10.0"/>
+                                            </HBox.margin>
+                                            <font>
+                                                <Font size="16.0" />
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                        
+                         <ListView fx:id="report_list"  VBox.vgrow="ALWAYS"/>
+                        
+                     </children>
+                  </VBox>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>
