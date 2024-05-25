@@ -1,0 +1,22 @@
+#parentPane{
+   -fx-background-image: url("assets/background.jpg");
+   -fx-background-repeat: no-repeat;   
+   -fx-background-size: cover;
+   -fx-background-position: center center;
+   -fx-background-color: #ffffff;
+}
+
+#contentPane{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8.0;
+}
+
+#pane{
+    -fx-background-color: #dddddd;
+    -fx-background-radius: 8.0;
+}
+
+.button{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8.0;
+}
