@@ -1,0 +1,43 @@
+#parentPane{
+   -fx-background-image: url("assets/background.jpg");
+   -fx-background-repeat: no-repeat;   
+   -fx-background-size: cover;
+   -fx-background-position: center;
+   -fx-background-color: #ffffff;
+}
+
+#parent{
+   -fx-background-image: url("assets/background.jpg");
+   -fx-background-repeat: no-repeat;   
+   -fx-background-size: cover;
+   -fx-background-position: center;
+   -fx-background-color: #ffffff;
+   margin: 0;
+   padding: 0;
+}
+
+#contentPane{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8.0;
+}
+
+#homeContentPane{
+    -fx-background-color: transparent;
+    -fx-background-radius: 8.0;
+}
+
+.button{
+    -fx-background-color: transparent;
+    -fx-background-radius: 8.0;
+}
+
+.home-tab-button{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8.0;
+}
+
+#tab{
+    margin: 2;
+    -fx-background-radius: 8.0;
+    padding: 8.0;
+}

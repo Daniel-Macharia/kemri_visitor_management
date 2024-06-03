@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox fx:id="parentPane" 
+      alignment="CENTER" 
+      stylesheets="@style.css" 
+      xmlns="http://javafx.com/javafx/8" 
+      style="-fx-background-color: #ffffff;" 
+      xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="kemri_visitors_project.Employee_signupController">
+   <children>
+        <VBox alignment="CENTER" fx:id="contentPane" prefHeight="540" maxWidth="600" spacing="8.0">
+            <children>
+                <HBox alignment="CENTER" spacing="8.0">
+                    <children>
+                        <Label layoutX="255.0" layoutY="82.0" text="Staff Registration" textFill="#22bae5">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                
+                <HBox alignment="CENTER" spacing="8.0">
+                    <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Staff Number" textFill="#b51b72">
+                            <HBox.margin>
+                                <Insets top="10.0" bottom="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <TextField prefHeight="25.0" prefWidth="198.0" fx:id="staff_number" promptText="enter staff number" >
+                            <HBox.margin>
+                                <Insets top="10.0" bottom="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </TextField>
+                    </children>
+                </HBox>
+       
+                <HBox alignment="CENTER" spacing="8.0">
+                    <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Full Name" textFill="#b51b72">
+                            <HBox.margin>
+                                <Insets top="10.0" bottom="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <TextField prefHeight="25.0" prefWidth="198.0" fx:id="staff_name" promptText="enter staff full name" >
+                            <HBox.margin>
+                                <Insets top="10.0" bottom="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </TextField>
+                    </children>
+                </HBox>
+       
+                <HBox alignment="CENTER" spacing="8.0">
+                    <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Password" textFill="#b51b72">
+                            <HBox.margin>
+                                <Insets top="10.0" bottom="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <PasswordField prefHeight="25.0" prefWidth="198.0" fx:id="staff_password" promptText="enter password" >
+                            <HBox.margin>
+                                <Insets top="10.0" bottom="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </PasswordField>
+                    </children>
+                </HBox>
+       
+                <HBox alignment="CENTER" spacing="8.0">
+                    <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Password" textFill="#b51b72">
+                            <HBox.margin>
+                                <Insets top="10.0" bottom="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <PasswordField prefHeight="25.0" prefWidth="198.0" fx:id="staff_confirm_password" promptText="confirm password" >
+                            <HBox.margin>
+                                <Insets top="10.0" bottom="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </PasswordField>
+                    </children>
+                </HBox>
+       
+                <HBox alignment="CENTER" spacing="8.0">
+                    <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" text="Phone Number" textFill="#b51b72">
+                            <HBox.margin>
+                                <Insets top="10.0" bottom="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Label>
+                        <TextField prefHeight="25.0" prefWidth="198.0" fx:id="staff_phone_number" promptText="enter staff phone number" >
+                            <HBox.margin>
+                                <Insets top="10.0" bottom="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </TextField>
+                    </children>
+                </HBox>
+       
+                <HBox alignment="CENTER" spacing="160.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#logInAction" text="Log In" textFill="#22bae5" prefHeight="30.0" prefWidth="96.0">
+                            <HBox.margin>
+                                <Insets top="10.0" bottom="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#signUpAction" text="Sign Up" textFill="#22bae5" prefHeight="30.0" prefWidth="96.0">
+                            <HBox.margin>
+                                <Insets top="10.0" bottom="10.0"/>
+                            </HBox.margin>
+                            <font>
+                                <Font size="16.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+   </children>
+</VBox>
