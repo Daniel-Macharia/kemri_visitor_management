@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+
+<VBox 
+    id="AnchorPane" 
+    maxHeight="600.0" 
+    prefWidth="600.0"
+    style="-fx-background-color: #ffffff"
+    VBox.vgrow="ALWAYS"
+    xmlns:fx="http://javafx.com/fxml/1" 
+    fx:controller="kemri_visitors_project.StaffVisitReportController">
+    
+    <HBox alignment="CENTER" spacing="32.0">
+      <children>
+         <HBox alignment="CENTER" spacing="32.0">
+            <children>
+               <Label text="Date: " textFill="#b51b72">
+                  <HBox.margin>
+                     <Insets bottom="10.0" top="10.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Label>
+               <DatePicker fx:id="date_to_report" promptText="date to report">
+                  <HBox.margin>
+                     <Insets bottom="10.0" top="10.0" />
+                  </HBox.margin>
+               </DatePicker>
+            </children>
+         </HBox>
+         <HBox alignment="CENTER" spacing="16">
+            <children>
+               <Label prefWidth="64.0">
+                  <HBox.margin>
+                     <Insets bottom="10.0" top="10.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Label>
+               <Button mnemonicParsing="false" styleClass="home-content-button" text="Generate" onAction="#handleGenerateVisitReportAction" textFill="#22bae5">
+                  <HBox.margin>
+                     <Insets bottom="10.0" top="10.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Button>
+               <Label prefWidth="64.0">
+                  <HBox.margin>
+                     <Insets bottom="10.0" top="10.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Label>
+               <Button mnemonicParsing="false" prefHeight="30.0" styleClass="home-content-button" text="Download" onAction="#handleDownloadVisitReportAction" textFill="#22bae5">
+                  <HBox.margin>
+                     <Insets bottom="10.0" top="10.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Button>
+            </children>
+         </HBox>
+      </children>
+   </HBox>
+   <!-- ScrollPane fx:id="report_scroll_pane" hbarPolicy="ALWAYS" vbarPolicy="ALWAYS">
+      <content-->
+         <ListView fx:id="report_list" prefWidth="1240.0" prefHeight="1200.0" accessibleRole="SCROLL_PANE" />
+      <!-- /content>
+   </ScrollPane -->
+    
+</VBox>

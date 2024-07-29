@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.*?>
+
+
+<VBox 
+    fx:id="tab"
+    alignment="CENTER" 
+      maxWidth="600.0" 
+      prefHeight="600.0" 
+      style="-fx-background-color: #ffffff" 
+      fx:controller="kemri_visitors_project.GenerateQRCodeController"
+      xmlns:fx="http://javafx.com/fxml/1">
+<children>
+   <VBox alignment="CENTER" spacing="32.0">
+      <children>
+          <HBox alignment="CENTER" spacing="8.0">
+            <children>
+               <Label text="Generate ID QR Code" textFill="#408ae4">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+         <HBox alignment="CENTER" spacing="32.0">
+            <children>
+               <Label fx:id="idNumber" text="Enter ID Number" textFill="#b51b72">
+                  <HBox.margin>
+                     <Insets bottom="10.0" top="10.0" />
+                  </HBox.margin>
+                  <font>
+                     <Font size="16.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="ID" prefHeight="25.0" prefWidth="224.0" promptText="enter ID number">
+                 <HBox.margin>
+                      <Insets bottom="10.0" top="10.0" />
+                 </HBox.margin>
+                 <font>
+                     <Font size="16.0" />
+                 </font>
+              </TextField>
+               <Button text="Generate QR" prefHeight="30.0" onAction="#handleGenerateQRCodeAction" textFill="#22bae5">
+                  <HBox.margin>
+                     <Insets bottom="10.0" top="10.0" />
+                  </HBox.margin>
+               </Button>
+            </children>
+         </HBox>
+         
+         <HBox alignment="CENTER" spacing="16">
+            <children>
+               <ImageView fx:id="qrImage" fitHeight="135.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                         <Image url="@assets/kemri_with_motto.jpg" />
+                     </image>
+                 </ImageView>
+            </children>
+         </HBox>
+         
+      </children>
+     </VBox>
+</children>
+</VBox>
