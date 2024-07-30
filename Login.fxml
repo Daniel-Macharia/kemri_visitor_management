@@ -35,9 +35,9 @@
                 </Label>
             </children>
         </HBox>
-                <ImageView fx:id="login_logo_image" fitHeight="135.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="login_logo_image" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                    <image>
-                      <Image url="@assets/vms.png" />
+                      <Image url="@assets/KEMRI.png" />
                    </image>
                 </ImageView>
                    
@@ -85,14 +85,14 @@
                 
                 <HBox alignment="CENTER" spacing="141.0">
                     <children>
-                        <Button mnemonicParsing="false" onAction="#signUpAction" prefHeight="30.0" prefWidth="96.0" text="Sign Up" textFill="#22bae5">
+                        <!-- Button mnemonicParsing="false" onAction="#signUpAction" prefHeight="30.0" prefWidth="96.0" text="Sign Up" textFill="#22bae5">
                             <HBox.margin>
                                 <Insets bottom="10.0" top="10.0" />
                             </HBox.margin>
                             <font>
                                 <Font size="16.0" />
                             </font>
-                        </Button>
+                        </Button -->
                         <Button mnemonicParsing="false" onAction="#logInAction" prefHeight="30.0" prefWidth="96.0" text="Login" textFill="#22bae5">
                             <HBox.margin>
                                 <Insets bottom="10.0" top="10.0" />

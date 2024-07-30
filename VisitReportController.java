@@ -189,11 +189,11 @@ public class VisitReportController implements Initializable {
                     {
                         try
                         {
-                            WriteToSpreadSheet sheet = new WriteToSpreadSheet( date, " Visitor report");
+                            WriteToSpreadSheet sheet = new WriteToSpreadSheet( date, " Visitor report", false);
                 
                             while( result.next() )
                             {
-                                sheet.insert( result.getInt(1),
+                                sheet.insert( result.getInt(1) + "",
                                     result.getString(2),
                                     result.getString(3),
                                     result.getString(4),
@@ -281,11 +281,11 @@ class WriteToSpreadSheet
     private OutputStream out;
     private int count;
     
-    public WriteToSpreadSheet( String date, String title )
+    public WriteToSpreadSheet( String date, String title, boolean isStaffReport )
     {
         this.name = new String( date + title + ".xlsx");
         workbook = new XSSFWorkbook();
-        createSheet();
+        createSheet(isStaffReport);
         count = 0;
     }
 
@@ -293,7 +293,7 @@ class WriteToSpreadSheet
     private XSSFSheet getSheet(){return this.sheet; }
     private String getName(){ return this.name; }
     
-    private void createSheet()
+    private void createSheet(boolean isStaffReport)
     {
         try
         {
@@ -312,14 +312,22 @@ class WriteToSpreadSheet
             workbook.write(out);
             
             
-            insert(0, "ID Number", "Name", "Phone", "Origin", "Destination", "Reason", "Time In", "Time out");
+            if( isStaffReport )
+            {
+                insertStaffVisitRecord("Visit Number", "ID Number", "Name", "Phone Number", "Station", "Time In", "Time Out");
+            }
+            else
+            {
+                insert("Visit Number", "ID Number", "Name", "Phone", "Origin", "Destination", "Reason", "Time In", "Time out");
+            }
+            
         }catch( Exception e )
         {
             UtilityClass.alert("Error: " + e);
         }
     }
     
-    public void insert( int visitNumber, String idNumber, String visitorName, String phoneNumber,
+    public void insert( String visitNumber, String idNumber, String visitorName, String phoneNumber,
             String visitorOrigin, String visitorDestination, String visitReason,
             String timeIn, String timeOut )
     {
@@ -375,7 +383,7 @@ class WriteToSpreadSheet
         }
     } 
     
-    public void insertStaffVisitRecord( int visitNumber, String idNumber, String staffName, String staffPhoneNumber,
+    public void insertStaffVisitRecord( String visitNumber, String idNumber, String staffName, String staffPhoneNumber,
             String staffStation, String timeIn, String timeOut )
     {
         try

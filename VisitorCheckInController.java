@@ -220,7 +220,7 @@ public class VisitorCheckInController implements Initializable {
             y = s.next();
 
             String dateString = y + "-" + m + "-" + d;
-            
+            UtilityClass.inform("Date: " + dateString);
             String time_out = "";
             String time_in = getTimeString();
             
@@ -268,7 +268,7 @@ public class VisitorCheckInController implements Initializable {
             
         }catch(MySQLIntegrityConstraintViolationException e )
         {
-            UtilityClass.alert("Visitor not Registered!\nPlease Register first.");
+            UtilityClass.alert("Visitor not Registered!\nPlease Register first." + "\nVisit Number: " + UtilityClass.visitCount);
         }
         catch( Exception e )
         {

@@ -160,7 +160,7 @@ public class StaffVisitReportController implements Initializable {
             
             PreparedStatement state = con.prepareStatement( sql );
             
-            //date = "2024-6-03";
+            
             state.setString(1, date);
             
             ResultSet result = state.executeQuery();
@@ -174,11 +174,11 @@ public class StaffVisitReportController implements Initializable {
                     public void run()
                     {
                         try{
-                            WriteToSpreadSheet sheet = new WriteToSpreadSheet( date, " Staff Visit Report" );
+                            WriteToSpreadSheet sheet = new WriteToSpreadSheet( date, " Staff Visit Report", true);
                 
                             while( result.next() )
                             {
-                                sheet.insertStaffVisitRecord( result.getInt(1),
+                                sheet.insertStaffVisitRecord( result.getInt(1) + "",
                                     result.getString(2),
                                     result.getString(3),
                                     result.getString(4),

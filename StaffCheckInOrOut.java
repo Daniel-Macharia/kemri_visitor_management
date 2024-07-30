@@ -127,7 +127,7 @@ public class StaffCheckInOrOut implements Initializable {
         s.next();
         y = s.next();
 
-        String dateString = y + "-" + m + "-" + d;
+        String dateString = y + "-" + ((Integer.parseInt(m) < 10) ? ("0" + m) : m) + "-" + ((Integer.parseInt(d) < 10) ? ("0" + d) : d );
 
         return dateString;
     }
@@ -216,31 +216,65 @@ public class StaffCheckInOrOut implements Initializable {
         }
     }
     
-    private boolean isCheckedOut()
+    private boolean isCheckedOut(String staffNumber, String dateString )
     {
         //check whether the staff was already checked
+        
+        try
+        {
+            String sql = "SELECT * FROM STAFF_VISIT WHERE VISIT_DATE=? AND VISIT_NUMBER=?";
+            
+            Connection con = UtilityClass.getDatabaseConnection();
+            
+            PreparedStatement state;
+            
+            state  = con.prepareStatement(sql);
+            
+            state.setString(1, dateString );
+            state.setString(2, staffNumber );
+            
+            ResultSet result = state.executeQuery();
+            
+            if( result.next() )
+            {
+                if( !result.getString(6).equals("") )
+                {
+                    return true;
+                }
+            }
+            
+        }catch( Exception e )
+        {
+            UtilityClass.alert("Error: " + e );
+        }
         
         return false;
     }
 
     private void checkOut( String staffNumber, boolean isVisitNumber )
     {
-        if( isCheckedOut() )
-        {
-            return;//no checking out twice
-        }
+        
         try
         {
             String dateString = getDateString();
             String outTime = getTimeString();
+            
+            if( isVisitNumber )
+            {
+                if( isCheckedOut( staffNumber, dateString ) )
+                {
+                    UtilityClass.inform("This number is already checked out today!\nNumber: " + staffNumber);
+                    return;//no checking out twice
+                }
+            }
 
             String sql = "UPDATE STAFF_VISIT " +
                     "SET STAFF_CHECK_OUT_TIME=? " +
-                    "WHERE VISIT_DATE=? AND STAFF_ID=?";
+                    "WHERE VISIT_DATE=? AND STAFF_ID=? AND STAFF_CHECK_OUT_TIME=''";
             
             String sql2 = "UPDATE STAFF_VISIT " +
                     "SET STAFF_CHECK_OUT_TIME=? " +
-                    "WHERE VISIT_DATE=? AND VISIT_NUMBER=?";
+                    "WHERE VISIT_DATE=? AND VISIT_NUMBER=? AND STAFF_CHECK_OUT_TIME=''";
             
             Connection con = UtilityClass.getDatabaseConnection();
             

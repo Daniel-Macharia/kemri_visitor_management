@@ -140,7 +140,7 @@
                                             </children>
                                         </HBox>
 
-                                        <HBox alignment="CENTER" HBox.hgrow="ALWAYS">
+                                        <!-- HBox alignment="CENTER" HBox.hgrow="ALWAYS">
                                             <children>
                                                 <Button fx:id="generateQRCodeButton" styleClass="home-tab-button" onAction="#handleGenerateQRCodeAction" prefHeight="17.0" prefWidth="112.0" text="Generate QR" textFill="#b51b72">
                                                     <HBox.margin>
@@ -151,7 +151,7 @@
                                                     </font>
                                                 </Button>
                                             </children>
-                                        </HBox>
+                                        </HBox -->
 
                                     </children>
                                 </HBox>
